@@ -351,7 +351,7 @@ const signalingMessageCallback = async (message) => {
 1. Let's create the room.
 <img src="images/create-room.png"/>
 
-2. Let's open the app from other tab/ browser/ or device to connect to this peer via by joining the room.
+2. Let's open the app from other tab/ browser/ or device to connect to this peer by joining the room.
 <img src="images/join-room.png"/>
 
 3. In the Your connection status section, you will be able to see realtime connection updates.
