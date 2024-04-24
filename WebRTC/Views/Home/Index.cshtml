@@ -1,0 +1,103 @@
+﻿@{
+	ViewData["Title"] = "WebRTC POC";
+}
+
+@* Main container *@
+<div class="container">
+
+	@* Bootstrap toast *@
+	<div class="toast-container position-fixed top-0 end-0 p-3">
+		<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<span class="me-auto">WebRTC</span>
+				<small>Just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+			</div>
+		</div>
+	</div>
+
+	@* Create Room section *@
+	<div class="row">
+		<div class="col-lg-8 mb-3">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">Create Room</h3>
+					<div class="input-group">
+						<input type="text" id="roomNameText" class="form-control" placeholder="Enter a room name" aria-label="Enter a room name" aria-describedby="createRoomButton">
+						<button class="btn btn-outline-primary" type="button" id="createRoomButton">Create Room</button>
+						<div class="invalid-feedback">Room name cannot be empty.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@* List of Rooms section *@
+	<div class="col-lg-8 mb-3">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="card-title">List of Rooms</h3>
+				<table id="roomListTable" class="table table-striped" style="width:100%;">
+					<thead>
+						<tr>
+							<th>Room ID</th>
+							<th>Name</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Populate table dynamically using jQuery DataTable -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	@* Connection status section *@
+	<div class="col-lg-8 mb-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="col-auto">
+					<h5 class="card-title">Your Connection Status</h5>
+					<div class="connectionStatusDiv">
+						<p id="connectionStatusMessage">*You can create your own room or join another room.</p>
+					</div>
+					<div class="leaveCallDiv">
+						<button class="btn btn-outline-danger d-none" type="button" id="leaveRoomButton">Leave Room</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@* Videos section *@
+	<div class="row">
+
+		@* Local video stream *@
+		<div class="col-lg-6 mb-3">
+			<div class="card">
+				<div class="card-body d-flex flex-column align-items-center">
+					<h3 class="card-text">Local Video</h3>
+					<div class="videoAreaDiv embed-responsive embed-responsive-16by9">
+						<video id="localVideo" class="embed-responsive-item img-fluid rounded" autoplay playsinline></video>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@* Remote video stream *@
+		<div class="col-lg-6 mb-3">
+			<div class="card">
+				<div class="card-body d-flex flex-column align-items-center">
+					<h3 class="card-title">Remote Video</h3>
+					<div class="videoAreaDiv embed-responsive embed-responsive-16by9">
+						<video id="remoteVideo" class="embed-responsive-item img-fluid rounded" autoplay playsinline></video>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
